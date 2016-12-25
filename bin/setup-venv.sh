@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Do some sanity checking
-if ! [ -f setup.py -a -f src/kle2xy/__init__.py ]; then
+if ! [ -f setup.py -a -f kle2xy.py ]; then
     echo 'You must run this in the top level of kle2xy!'
     exit 1
 elif [ -d .kle2xy -a "$1" != "-f" ]; then
@@ -42,12 +42,11 @@ fi
 # Create the new virtualenv
 virtualenv .kle2xy || exit
 site_packages=$(echo .kle2xy/lib/python*/site-packages | cut -f 1 -d ' ')
-echo $PWD/src > $site_packages/kle2xy.pth || exit
 ln -s .kle2xy/bin/activate || exit
 
 # Setup the environment
 source activate || exit
-pip install pytest pytest-cov pytest-flask flake8 || exit  # FIXME: Add to setup.py somehow
+pip install -r requirements.txt || exit
 python setup.py develop || exit
 
 cat << EOF
