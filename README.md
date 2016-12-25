@@ -2,6 +2,10 @@
 
 Python library for turning keyboard-layout-editor.com raw code into X/Y coordinates.
 
+[![Build Status](https://travis-ci.org/skullydazed/kle2xy.svg?branch=master)](https://travis-ci.org/skullydazed/kle2xy)
+
+[![codecov](https://codecov.io/gh/skullydazed/kle2xy/branch/master/graph/badge.svg)](https://codecov.io/gh/skullydazed/kle2xy)
+
 ## Usage
 
 ```python
