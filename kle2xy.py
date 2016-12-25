@@ -6,7 +6,7 @@ class KLE2xy(list):
     """Abstract interface for interacting with a KLE layout.
     """
     def __init__(self, layout=None):
-        super().__init__()
+        super(KLE2xy, self).__init__()
 
         self.unit = 'mm'
         self.key_width = Decimal('19.05')

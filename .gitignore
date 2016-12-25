@@ -65,8 +65,8 @@ target/
 .env
 
 # virtualenv
-.kle2xy
-activate
+.kle2xy*
+activate*
 
 # Spyder project settings
 .spyderproject

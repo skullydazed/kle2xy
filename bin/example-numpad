@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from kle2xy import KLE2xy
+from __future__ import print_function
 
 numpad_code = """["NL","/","*","-"],
 ["7","8","9",{h:2},"+"],
