@@ -68,11 +68,8 @@ target/
 .kle2xy*
 activate*
 
-# Spyder project settings
-.spyderproject
-
-# Rope project settings
+# IDE project settings
+.idea
 .ropeproject
-
-# VIM swp files
+.spyderproject
 *.swp

@@ -23,7 +23,7 @@ setup(
     author_email='skullydazed@gmail.com',
     install_requires=['hjson'],
     packages=find_packages(),
-    scripts=['bin/example-numpad'],
+    #scripts=['bin/example-numpad'],
     include_package_data=True,
     classifiers=[
         'Development Status :: 5 - Production/Stable',

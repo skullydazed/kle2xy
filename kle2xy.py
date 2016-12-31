@@ -52,7 +52,7 @@ class KLE2xy(list):
                     # Determine the Y center
                     y_center = (current_key['height'] * self.key_width) / 2
                     y_offset = y_center - (self.key_width / 2)
-                    current_key['y'] = current_y + y_offset
+                    current_key['y'] = -(current_y + y_offset)
 
                     # Store this key
                     self[-1].append(current_key)
