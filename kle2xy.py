@@ -60,8 +60,8 @@ class KLE2xy(list):
 
         # Initialize our state machine
         current_key = self.key_skel.copy()
-        current_row = 0
-        current_col = 0
+        current_row = Decimal(0)
+        current_col = Decimal(0)
         current_x = 0
         current_y = self.key_width / 2
 
@@ -102,16 +102,18 @@ class KLE2xy(list):
                     if 't' in key:
                         current_key['label_color'] = self.key_skel['label_color'] = key['t']
                     if 'x' in key:
-                        current_col += key['x']
+                        current_col += Decimal(key['x'])
                         current_x += Decimal(key['x']) * self.key_width
                     if 'y' in key:
-                        current_row += key['y']
+                        current_row += Decimal(key['y'])
                         current_y += Decimal(key['y']) * self.key_width
                     if 'd' in key:
                         current_key['decal'] = True
 
                 else:
                     current_key['name'] = key
+                    current_key['row'] = current_row
+                    current_key['column'] = current_col
 
                     # Determine the X center
                     x_center = (current_key['width'] * self.key_width) / 2
@@ -140,7 +142,7 @@ class KLE2xy(list):
             # Move to the next row
             current_x = 0
             current_y += self.key_width
-            current_col = 0
-            current_row += 1
+            current_col = Decimal(0)
+            current_row += Decimal(1)
             if current_row > self.rows:
                 self.rows = Decimal(current_row)
