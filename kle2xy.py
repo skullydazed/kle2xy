@@ -77,6 +77,10 @@ class KLE2xy(list):
                 if isinstance(key, dict):
                     if 'w' in key and key['w'] != Decimal(1):
                         current_key['width'] = Decimal(key['w'])
+                        if key['w'] > 1:
+                            current_col += Decimal(key['w'] - 1)
+                        else:
+                            current_col -= Decimal(1 - key['w'])
                     if 'w2' in key and 'h2' in key and key['w2'] == 1.5 and key['h2'] == 1:
                         # FIXME: ISO Key uses these params: {x:0.25,w:1.25,h:2,w2:1.5,h2:1,x2:-0.25}
                         current_key['isoenter'] = True
