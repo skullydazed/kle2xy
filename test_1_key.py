@@ -223,13 +223,13 @@ def test_2_75u():
     assert i[0][0]['y'] == Decimal('-9.525')
 
 
-# def test_iso_enter():
-#     i = KLE2xy('[{x:0.25,a:7,w:1.25,h:2,w2:1.5,h2:1,x2:-0.25},"Enter"]')
-#     assert i.width == Decimal('33.3375')
-#     assert i.height == Decimal('28.575')
-#     assert i.size == (Decimal('33.3375'), Decimal('28.575'))
-#     assert i[0][0]['isoenter'] == True
-#     assert i[0][0]['width'] == Decimal('1.25')
-#     assert i[0][0]['height'] == Decimal('2')
-#     assert i[0][0]['x'] == Decimal('16.66875')
-#     assert i[0][0]['y'] == Decimal('-19.05')
+def test_iso_enter():
+    i = KLE2xy('[{x:0.25,a:7,w:1.25,h:2,w2:1.5,h2:1,x2:-0.25},"Enter"]')
+    assert i.width == Decimal('33.3375')
+    assert i.height == Decimal('28.575')
+    assert i.size == (Decimal('33.3375'), Decimal('28.575'))
+    assert i[0][0]['isoenter'] == True
+    assert i[0][0]['width'] == Decimal('1.25')
+    assert i[0][0]['height'] == Decimal('2')
+    assert i[0][0]['x'] == Decimal('16.66875')
+    assert i[0][0]['y'] == Decimal('-19.05')
