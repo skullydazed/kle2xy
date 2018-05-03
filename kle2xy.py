@@ -100,6 +100,11 @@ class KLE2xy(list):
                     if 'c' in key:
                         current_key['keycap_color'] = self.key_skel['keycap_color'] = key['c']
                     if 't' in key:
+                        # FIXME: Need to do better validation, plus figure out how to support multiple colors
+                        if '\n' in key['t']:
+                            key['t'] = key['t'].split('\n')[0]
+                        if key['t'] == "0":
+                            key['t'] = "#000000"
                         current_key['label_color'] = self.key_skel['label_color'] = key['t']
                     if 'x' in key:
                         current_col += Decimal(key['x'])
